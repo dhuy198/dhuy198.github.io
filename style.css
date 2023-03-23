@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Dancing Script', cursive;
+}
+
+body {
+    position: relative;
+    background-color: rgb(233, 105, 105);
+}
+
+.main {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 150px auto;
+}
+
+.button {
+    margin-top: 20px;
+}
+
+#btn {
+    padding: 12px 24px;
+    border: none;
+    outline: none;
+    border-radius: 12px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(233, 105, 105);
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s linear;
+    box-shadow: 0 0 4px 4px rgba(255, 255, 255, 0.601);
+}
+
+#btn:hover {
+    background-color: rgb(233, 105, 105);
+    color: white;
+    letter-spacing: 1px;
+}
+
+#song {
+    display: none;
+}
+
+.section {
+    position: absolute;
+    width: 60%;
+    z-index: 1000;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgb(0, 0, 0);
+    background-color: rgba(255, 255, 255, 0.678);
+    height: 500px;
+    border-radius: 20px;
+    padding: 20px 40px;
+    visibility: hidden;
+    transform-origin: left center;
+    animation-delay: 10s;
+    animation: appear 8s linear;
+}
+
+@keyframes appear {
+    0% {
+        transform: scale(0) translateX(-50%);
+    }
+    25% {
+        transform: scale(0.25) translateX(-50%);
+    }
+    50% {
+        transform: scale(0.5) translateX(-50%);
+    }
+    75% {
+        transform: scale(0.75) translateX(-50%);
+    }
+    100% {
+        transform: scale(1) translateX(-50%);
+    }
+}
+
+h1 {
+    text-align: center;
+    font-size: 45px;
+    margin: 20px 0;
+}
+
+.section p {
+    font-size: 24px;
+    line-height: 1.5;
+    font-weight: 700;
+    overflow: hidden;
+}
+
+.heart {
+    position: fixed;
+    top: -1vh;
+    transform: translateY(0);
+    animation: rain 3s linear forwards;
+    font-size: 2rem;
+}
+
+@keyframes rain {
+    to {
+        transform: translateY(105vh);
+    }
+}
+
+@media screen and (max-width: 572px) {
+    .section {
+        width: 100%;
+        top: -70px;
+        height: 550px;
+        padding: 20px;
+    }
+    img {
+        width: 280px;
+        height: 280px;
+    }
+    #btn {
+        margin: 20px;
+        padding: 8px 15px;
+        font-size: 16px;
+    }
+}
